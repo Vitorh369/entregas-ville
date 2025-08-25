@@ -6,7 +6,7 @@ burger?.addEventListener('click', () => {
   burger.classList.toggle('open');
 });
 
-// FormSubmit via AJAX
+// FormSubmit (opcional: status visual por JS)
 const form = document.getElementById('contactForm');
 const statusEl = document.getElementById('formStatus');
 const submitBtn = document.getElementById('submitBtn');
@@ -30,16 +30,20 @@ form?.addEventListener('submit', async (e) => {
     const res = await fetch(form.action, { method: 'POST', headers: { 'Accept': 'application/json' }, body: data });
     if (res.ok) { form.reset(); showStatus('Mensagem enviada com sucesso! ✅'); }
     else { const err = await res.json().catch(()=>({})); showStatus(err?.message || 'Erro ao enviar. Tente novamente mais tarde.', false); }
-  } catch (err) { showStatus('Falha de rede. Verifique sua conexão e tente novamente.', false); }
-  finally { submitBtn.disabled = false; submitBtn.textContent = 'Enviar Mensagem'; }
+  } catch (err) {
+    showStatus('Falha de rede. Verifique sua conexão e tente novamente.', false);
+  } finally {
+    submitBtn.disabled = false;
+    submitBtn.textContent = 'Enviar Mensagem';
+  }
 });
 
-// Scroll-top (Font Awesome button)
+// Scroll-to-top (mostra/oculta no scroll)
 const stBtn = document.getElementById('scrollTopBtn');
 const toggleSt = () => {
   const y = window.scrollY || document.documentElement.scrollTop;
-  stBtn.style.display = y > 300 ? 'flex' : 'none';
+  if (stBtn) stBtn.style.display = y > 300 ? 'flex' : 'none';
 };
-window.addEventListener('scroll', toggleSt);
+window.addEventListener('scroll', toggleSt, { passive: true });
 toggleSt();
 stBtn?.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));

@@ -1,11 +1,10 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Entregas Ville</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
   <!-- Font Awesome -->
   <link href="https://use.fontawesome.com/releases/v6.5.0/css/all.css" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -65,23 +64,19 @@
         <article class="card light">
           <div class="icon-wrap"><span class="icon">🚀</span></div>
           <h3>Nossa Missão</h3>
-          <p>Facilitar a logística para empresas de todos os tamanhos, oferecendo um serviço de entrega
-            rápido, confiável e acessível que impulsiona o crescimento dos nossos clientes.</p>
+          <p>Facilitar a logística para empresas de todos os tamanhos, oferecendo um serviço de entrega rápido, confiável e acessível.</p>
         </article>
 
         <article class="card light">
           <div class="icon-wrap"><span class="icon">🛡️</span></div>
-         <h3>Nossa Visão</h3>
-          <p>Ser a principal referência em soluções de entrega em Joinville - SC, reconhecida pela excelência
-          operacional, e compromisso com a satisfação do cliente.</p>
-
+          <h3>Nossa Visão</h3>
+          <p>Ser a principal referência em soluções de entrega em Joinville - SC, reconhecida pela excelência operacional, e compromisso com a satisfação do cliente.</p>
         </article>
 
         <article class="card light">
           <div class="icon-wrap"><span class="icon">👥</span></div>
           <h3>Nossos Valores</h3>
-          <p>Agilidade, Segurança, Transparência, Foco no Cliente e Inovação contínua. Estes são os pilares
-            que guiam cada uma de nossas entregas e decisões.</p>
+          <p>Agilidade, Segurança, Transparência, Foco no Cliente e Inovação contínua.</p>
         </article>
       </div>
     </div>
@@ -91,14 +86,12 @@
   <section id="servicos" class="section section-dark">
     <div class="container">
       <h2 class="section-title">Nossas <span class="accent">Soluções</span></h2>
-      <p class="section-sub">
-        Oferecemos uma gama completa de serviços para atender às necessidades específicas do seu negócio.
-      </p>
+      <p class="section-sub">Oferecemos uma gama completa de serviços para atender às necessidades específicas do seu negócio.</p>
 
       <div class="cards-6 dark">
         <article class="card dark">
           <div class="badge-icon">
-            <!-- Ícone Avião de Papel (card 1) -->
+            <!-- Ícone Avião de Papel SVG -->
             <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="white" viewBox="0 0 24 24" aria-hidden="true">
               <path d="M2.01 21 23 12 2.01 3 2 10l15 2-15 2z"/>
             </svg>
@@ -142,43 +135,41 @@
 
   <!-- Contato -->
   <section id="contato" class="section contact">
-  <div class="container grid-contact">
-    <div class="contact-card">
-      <h3>Solicite um Orçamento</h3>
-      <!-- FormSubmit -->
-      <form id="contactForm" action="https://formsubmit.co/fadcc8fe0de715322b93352ce494571c" method="POST" novalidate>
-        <!-- Configurações extras -->
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_template" value="table">
-        <input type="hidden" name="_subject" value="Novo contato - Entregas Ville">
-        <input type="text" name="_honey" style="display:none">
+    <div class="container grid-contact">
+      <div class="contact-card">
+        <h3>Solicite um Orçamento</h3>
+        <!-- FormSubmit (token) -->
+        <form id="contactForm" action="https://formsubmit.co/fadcc8fe0de715322b93352ce494571c" method="POST" novalidate>
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_subject" value="Novo contato - Entregas Ville">
+          <input type="text" name="_honey" style="display:none">
 
-        <label>Nome
-          <input type="text" name="nome" placeholder="Seu nome completo" required>
-        </label>
-        <label>E-mail
-          <input type="email" name="email" placeholder="seu@email.com" required>
-        </label>
-        <label>Mensagem
-          <textarea name="mensagem" rows="5" placeholder="Conte-nos sobre sua necessidade..." required></textarea>
-        </label>
+          <label>Nome
+            <input type="text" name="nome" placeholder="Seu nome completo" required>
+          </label>
+          <label>E-mail
+            <input type="email" name="email" placeholder="seu@email.com" required>
+          </label>
+          <label>Mensagem
+            <textarea name="mensagem" rows="5" placeholder="Conte-nos sobre sua necessidade..." required></textarea>
+          </label>
 
-        <button class="btn btn-primary btn-block" type="submit" id="submitBtn">Enviar Mensagem</button>
-        <div id="formStatus" class="form-status" role="status" aria-live="polite"></div>
-      </form>
+          <button class="btn btn-primary btn-block" type="submit" id="submitBtn">Enviar Mensagem</button>
+          <div id="formStatus" class="form-status" role="status" aria-live="polite"></div>
+        </form>
+      </div>
+
+      <aside class="contact-info">
+        <h4>Nossos Contatos</h4>
+        <ul>
+          <li><span class="ci-badge">📞</span><div><b>Telefone</b><br><span>(47) 99742-5798</span></div></li>
+          <li><span class="ci-badge">✉️</span><div><b>E-mail</b><br><span>entregasville@gmail.com</span></div></li>
+          <li><span class="ci-badge">📍</span><div><b>Endereço</b><br><span>Joinville - SC</span></div></li>
+        </ul>
+      </aside>
     </div>
-
-    <aside class="contact-info">
-      <h4>Nossos Contatos</h4>
-      <ul>
-        <li><span class="ci-badge">📞</span><div><b>Telefone</b><br><span>(47) 99742-5798</span></div></li>
-        <li><span class="ci-badge">✉️</span><div><b>E-mail</b><br><span>entregasville@gmail.com</span></div></li>
-        <li><span class="ci-badge">📍</span><div><b>Endereço</b><br><span>Joinville - SC</span></div></li>
-      </ul>
-    </aside>
-  </div>
-</section>
-
+  </section>
 
   <!-- Footer -->
   <footer class="site-footer">
@@ -225,13 +216,10 @@
     <i class="fab fa-instagram"></i>
   </a>
 
-  <a href="https://wa.me/5547997425798?text=Olá!%20Gostaria%20de%20fazer%20uma%20cotação%20de%20frete." 
-    target="_blank" 
-    class="floating-icon whatsapp" 
-    aria-label="WhatsApp">
+  <a href="https://wa.me/5547997425798?text=Ol%C3%A1!%20Gostaria%20de%20fazer%20uma%20cota%C3%A7%C3%A3o%20de%20frete." 
+     target="_blank" class="floating-icon whatsapp" aria-label="WhatsApp">
     <i class="fab fa-whatsapp"></i>
   </a>
-
 
   <button class="floating-icon scroll-top" id="scrollTopBtn" aria-label="Voltar ao topo">
     <i class="fa-solid fa-arrow-up"></i>

@@ -1,4 +1,4 @@
-/* Base */
+/* ===== Base ===== */
 :root {
     --bg: #eef3f5;
     --text: #0e2a3b;
@@ -12,13 +12,14 @@
 }
 
 * {
-    box-sizing: border-box
+    box-sizing: border-box;
 }
 
 html,
 body {
     margin: 0;
-    padding: 0
+    padding: 0;
+    overflow-x: hidden;
 }
 
 body {
@@ -30,68 +31,68 @@ body {
 
 .container {
     width: min(1120px, 92vw);
-    margin-inline: auto
+    margin-inline: auto;
 }
 
-/* Header */
+/* ===== Header ===== */
 .site-header {
     position: sticky;
     top: 0;
     z-index: 50;
     background: linear-gradient(180deg, rgba(238, 243, 245, .92), rgba(238, 243, 245, .70));
     backdrop-filter: saturate(120%) blur(6px);
-    border-bottom: 1px solid rgba(15, 43, 60, .06)
+    border-bottom: 1px solid rgba(15, 43, 60, .06);
 }
 
 .nav {
     display: flex;
     align-items: center;
     gap: 28px;
-    padding: 18px 0
+    padding: 18px 0;
 }
 
 .brand {
     display: flex;
     align-items: center;
     gap: 10px;
-    text-decoration: none
+    text-decoration: none;
 }
 
 .brand .brand-text {
     font-weight: 700;
-    color: var(--navy)
+    color: var(--navy);
 }
 
 .brand .accent {
-    color: var(--primary)
+    color: var(--primary);
 }
 
 .brand-logo {
     height: 120px;
     width: 120px;
     border-radius: 50%;
-    object-fit: cover
+    object-fit: cover;
 }
 
 .brand-logo.invert {
-    filter: none
+    filter: none;
 }
 
 .main-nav {
     display: flex;
     gap: 22px;
-    margin-left: auto
+    margin-left: auto;
 }
 
 .main-nav a {
     text-decoration: none;
     color: var(--navy);
     font-weight: 600;
-    opacity: .9
+    opacity: .9;
 }
 
 .main-nav a.active {
-    color: var(--primary)
+    color: var(--primary);
 }
 
 .btn {
@@ -105,42 +106,42 @@ body {
     text-decoration: none;
     border: 2px solid transparent;
     transition: transform .08s, box-shadow .2s, background .2s, color .2s;
-    box-shadow: var(--shadow)
+    box-shadow: var(--shadow);
 }
 
 .btn:hover {
-    transform: translateY(-1px)
+    transform: translateY(-1px);
 }
 
 .btn-primary {
     background: var(--primary);
-    color: #fff
+    color: #fff;
 }
 
 .btn-primary:hover {
-    background: var(--primary-600)
+    background: var(--primary-600);
 }
 
 .btn-outline {
     background: transparent;
     color: var(--navy);
     border-color: var(--navy);
-    box-shadow: none
+    box-shadow: none;
 }
 
 .btn-pill {
-    padding: 10px 16px
+    padding: 10px 16px;
 }
 
 .btn-block {
-    width: 100%
+    width: 100%;
 }
 
 .hamburger {
     display: none;
     background: none;
     border: 0;
-    margin-left: 8px
+    margin-left: 8px;
 }
 
 .hamburger span {
@@ -148,44 +149,44 @@ body {
     width: 24px;
     height: 2px;
     background: var(--navy);
-    margin: 5px 0
+    margin: 5px 0;
 }
 
-/* Hero */
+/* ===== Hero ===== */
 .hero {
     position: relative;
     padding: 90px 0 40px;
     overflow: hidden;
-    min-height: 64svh
+    min-height: 64svh;
 }
 
 .hero-inner {
     text-align: center;
-    padding: 30px 0 40px
+    padding: 30px 0 40px;
 }
 
 .hero h1 {
     font-size: clamp(36px, 5.4vw, 64px);
     line-height: 1.1;
     margin: 20px 0 10px;
-    color: var(--navy)
+    color: var(--navy);
 }
 
 .accent {
-    color: var(--primary)
+    color: var(--primary);
 }
 
 .hero-sub {
     color: var(--muted);
     width: min(720px, 90%);
     margin: 0 auto 26px;
-    font-size: 1.05rem
+    font-size: 1.05rem;
 }
 
 .hero-actions {
     display: flex;
     gap: 14px;
-    justify-content: center
+    justify-content: center;
 }
 
 .bg-blur {
@@ -195,71 +196,71 @@ body {
     height: 480px;
     border-radius: 50%;
     background: radial-gradient(closest-side, rgba(255, 125, 45, .16), transparent);
-    pointer-events: none
+    pointer-events: none;
 }
 
 .bg-blur.top-left {
     left: -180px;
-    top: -220px
+    top: -220px;
 }
 
 .bg-blur.top-right {
     right: -120px;
     top: -120px;
-    background: radial-gradient(closest-side, rgba(15, 43, 60, .10), transparent)
+    background: radial-gradient(closest-side, rgba(15, 43, 60, .10), transparent);
 }
 
 .bg-blur.bottom-left {
     left: -160px;
-    bottom: -160px
+    bottom: -160px;
 }
 
-/* Sections */
+/* ===== Sections ===== */
 .section {
-    padding: 64px 0
+    padding: 64px 0;
 }
 
 .section-dark {
-    background: linear-gradient(180deg, rgba(15, 43, 60, .04), rgba(15, 43, 60, .06))
+    background: linear-gradient(180deg, rgba(15, 43, 60, .04), rgba(15, 43, 60, .06));
 }
 
 .section-title {
     font-size: clamp(28px, 4.2vw, 48px);
     text-align: center;
     margin: 0 0 6px;
-    color: var(--navy)
+    color: var(--navy);
 }
 
 .section-sub {
     text-align: center;
     color: var(--muted);
     width: min(820px, 92%);
-    margin: 0 auto 28px
+    margin: 0 auto 28px;
 }
 
-/* Cards - Sobre */
+/* ===== Cards: Sobre ===== */
 .cards-3 {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 26px;
-    margin-top: 30px
+    margin-top: 30px;
 }
 
 .card {
     border-radius: 18px;
     padding: 26px;
     background: #f7fbfd;
-    box-shadow: var(--shadow)
+    box-shadow: var(--shadow);
 }
 
 .card.light h3 {
     margin: 8px 0 8px;
     color: var(--navy);
-    font-size: 1.4rem
+    font-size: 1.4rem;
 }
 
 .card.light p {
-    color: var(--muted)
+    color: var(--muted);
 }
 
 .icon-wrap {
@@ -270,37 +271,37 @@ body {
     display: grid;
     place-items: center;
     box-shadow: 0 8px 16px rgba(0, 0, 0, .06);
-    margin-bottom: 8px
+    margin-bottom: 8px;
 }
 
 .icon {
-    font-size: 24px
+    font-size: 24px;
 }
 
-/* Cards - Serviços (6) */
+/* ===== Cards: Serviços ===== */
 .cards-6 {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 28px;
-    margin-top: 28px
+    margin-top: 28px;
 }
 
 .card.dark {
     background: var(--navy);
     color: #e9f0f5;
     text-align: center;
-    padding-top: 34px
+    padding-top: 34px;
 }
 
 .card.dark h3 {
     color: #fff;
     margin-top: 10px;
     font-size: 1.22rem;
-    line-height: 1.3
+    line-height: 1.3;
 }
 
 .card.dark p {
-    color: #c8d6e2
+    color: #c8d6e2;
 }
 
 .badge-icon {
@@ -313,34 +314,34 @@ body {
     font-size: 28px;
     color: #fff;
     margin: -62px auto 6px;
-    box-shadow: 0 10px 20px rgba(255, 125, 45, .3)
+    box-shadow: 0 10px 20px rgba(255, 125, 45, .3);
 }
 
-/* Contato */
+/* ===== Contato ===== */
 .contact .grid-contact {
     display: grid;
     grid-template-columns: 1.1fr .9fr;
     gap: 36px;
-    align-items: start
+    align-items: start;
 }
 
 .contact-card {
     background: #f7fbfd;
     border-radius: 16px;
     padding: 22px 22px 24px;
-    box-shadow: var(--shadow)
+    box-shadow: var(--shadow);
 }
 
 .contact-card h3 {
     margin: 6px 0 12px;
-    font-size: 1.4rem
+    font-size: 1.4rem;
 }
 
 .contact-card label {
     display: block;
     font-weight: 600;
     font-size: .95rem;
-    margin: 10px 0 8px
+    margin: 10px 0 8px;
 }
 
 .contact-card input,
@@ -351,31 +352,31 @@ body {
     border: 1.5px solid var(--outline);
     font: inherit;
     outline: none;
-    background: #fff
+    background: #fff;
 }
 
 .contact-card input:focus,
 .contact-card textarea:focus {
     border-color: #9eb6ca;
-    box-shadow: 0 0 0 3px rgba(158, 182, 202, .25)
+    box-shadow: 0 0 0 3px rgba(158, 182, 202, .25);
 }
 
 .form-status {
     margin-top: 10px;
-    font-weight: 600
+    font-weight: 600;
 }
 
 .form-status.ok {
-    color: #0b8e2e
+    color: #0b8e2e;
 }
 
 .form-status.err {
-    color: #b00020
+    color: #b00020;
 }
 
 .contact-info h4 {
     font-size: 1.2rem;
-    margin: 6px 0 14px
+    margin: 6px 0 14px;
 }
 
 .contact-info ul {
@@ -383,13 +384,13 @@ body {
     padding: 0;
     margin: 0;
     display: grid;
-    gap: 16px
+    gap: 16px;
 }
 
 .contact-info li {
     display: flex;
     align-items: center;
-    gap: 14px
+    gap: 14px;
 }
 
 .ci-badge {
@@ -401,35 +402,35 @@ body {
     display: grid;
     place-items: center;
     font-size: 20px;
-    flex: 0 0 auto
+    flex: 0 0 auto;
 }
 
-/* Footer */
+/* ===== Footer ===== */
 .site-footer {
     background: var(--navy);
     color: #c8d6e2;
     margin-top: 30px;
-    padding-top: 30px
+    padding-top: 30px;
 }
 
 .footer-grid {
     display: grid;
     grid-template-columns: 1.2fr 1fr 1fr 1fr;
     gap: 22px;
-    align-items: start
+    align-items: start;
 }
 
 .brand-invert .brand-text {
-    color: #fff
+    color: #fff;
 }
 
 .f-brand p {
-    margin-top: 10px
+    margin-top: 10px;
 }
 
 .site-footer h5 {
     color: #fff;
-    margin: 8px 0 10px
+    margin: 8px 0 10px;
 }
 
 .footer-links,
@@ -438,18 +439,18 @@ body {
     padding: 0;
     margin: 0;
     display: grid;
-    gap: 8px
+    gap: 8px;
 }
 
 .footer-links a,
 .social a {
     color: #c8d6e2;
-    text-decoration: none
+    text-decoration: none;
 }
 
 .footer-links a:hover,
 .social a:hover {
-    color: #fff
+    color: #fff;
 }
 
 .copyright {
@@ -458,21 +459,21 @@ body {
     padding: 14px 0;
     margin-top: 18px;
     color: #9fb3c6;
-    font-size: .95rem
+    font-size: .95rem;
 }
 
-/* Responsive */
+/* ===== Responsive ===== */
 @media (max-width:1120px) {
     .cards-6 {
-        grid-template-columns: repeat(2, 1fr)
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .cards-3 {
-        grid-template-columns: repeat(2, 1fr)
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .contact .grid-contact {
-        grid-template-columns: 1fr
+        grid-template-columns: 1fr;
     }
 
     .main-nav {
@@ -484,89 +485,41 @@ body {
         padding: 10px 14px;
         border-radius: 12px;
         box-shadow: var(--shadow);
-        flex-direction: column
+        flex-direction: column;
     }
 
     .main-nav.open {
-        display: flex
+        display: flex;
     }
 
     .hamburger {
-        display: inline-block
+        display: inline-block;
     }
 }
 
 @media (max-width:640px) {
     .hero {
-        padding-top: 64px
+        padding-top: 64px;
     }
 
     .hero-actions {
-        flex-direction: column
+        flex-direction: column;
     }
 
     .cards-6,
     .cards-3 {
-        grid-template-columns: 1fr
+        grid-template-columns: 1fr;
     }
 
     .footer-grid {
-        grid-template-columns: 1fr 1fr
+        grid-template-columns: 1fr 1fr;
     }
 }
 
-/* ===== FABs Flutuantes ===== */
-.fab-container {
-    position: fixed;
-    right: 20px;
-    bottom: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-    z-index: 1000;
-}
-
-.fab {
-    width: 56px;
-    height: 56px;
-    border-radius: 50%;
-    display: grid;
-    place-items: center;
-    box-shadow: 0 10px 16px rgba(0, 0, 0, .18);
-    border: none;
-    cursor: pointer;
-    transition: transform .15s ease, box-shadow .2s ease, opacity .2s ease;
-    opacity: .96;
-}
-
-.fab:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 12px 20px rgba(0, 0, 0, .22);
-    opacity: 1
-}
-
-.fab-top {
-    background: #3a3a3a;
-}
-
-.fab-ig {
-    background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af, #515bd4);
-}
-
-.fab-wa {
-    background: #25D366;
-}
-
-#scrollTopBtn {
-    display: none;
-}
-
-/* aparece via JS */
-
-/* ===== Ícones flutuantes (Font Awesome) ===== */
+/* ===== Ícones flutuantes (Android-proof) ===== */
 .floating-icon,
 .scroll-top {
-    position: fixed;
+    position: fixed !important;
     width: 54px;
     height: 54px;
     right: 1rem;
@@ -574,44 +527,53 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 25px;
     text-decoration: none !important;
-    box-shadow: 1px 1px 2px #888;
-    z-index: 1001 !important;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, .3);
+    z-index: 9999;
+    /* acima de tudo */
     color: #FFF !important;
     border: none;
+
+    /* Força camada própria no Android/WebView para não “sumir” */
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    will-change: transform;
+    transition: transform .15s ease, box-shadow .2s ease, opacity .2s ease;
 }
 
 .floating-icon.instagram {
     bottom: 6rem !important;
-    /* ~96px */
     background: radial-gradient(circle at 33% 100%, #FED373 0%, #F15245 30%, #D92E7F 60%, #9B36B7 90%, #515ECF 100%);
 }
 
 .floating-icon.whatsapp {
     bottom: 2rem !important;
-    /* ~32px */
-    background-color: #25D366;
+    background: #25D366;
 }
 
 .scroll-top {
     bottom: 10rem !important;
     background: #3a3a3a;
-    opacity: 0.8;
-    cursor: pointer;
+    opacity: .9;
     display: none;
-    /* controlada via JS */
+    /* controlado via JS */
 }
 
+.floating-icon:hover,
 .scroll-top:hover {
-    opacity: 1;
+    transform: translateY(-2px);
+    box-shadow: 1px 3px 8px rgba(0, 0, 0, .35);
 }
 
-.floating-icon i {
+/* Centralização e tamanho do ícone (Android/iOS) */
+.floating-icon i,
+.scroll-top i {
     font-size: 22px;
     width: 100%;
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+    line-height: 0;
+    /* evita “pular” pra fora no Android */
 }
