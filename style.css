@@ -577,3 +577,54 @@ body {
     line-height: 0;
     /* evita “pular” pra fora no Android */
 }
+
+.site-header .nav {
+    justify-content: space-between;
+    /* distribui melhor os itens */
+    gap: 16px;
+}
+
+/* tablets e celulares “grandes” */
+@media (max-width: 768px) {
+    .cta-header {
+        padding: 8px 12px;
+        /* botão menor */
+        font-size: .88rem;
+        border-radius: 16px;
+        white-space: nowrap;
+        /* evita quebra esquisita do texto */
+    }
+
+    .brand-logo {
+        width: 72px;
+        height: 72px;
+    }
+
+    .brand .brand-text {
+        font-size: 1rem;
+    }
+}
+
+/* celulares pequenos (≤ 420px): manda o CTA para a linha de baixo e 100% largura */
+@media (max-width: 420px) {
+    .site-header .nav {
+        flex-wrap: wrap;
+        /* permite quebrar linha */
+    }
+
+    .brand {
+        order: 1;
+    }
+
+    .hamburger {
+        order: 2;
+    }
+
+    .cta-header {
+        order: 3;
+        /* fica abaixo */
+        width: 100%;
+        text-align: center;
+        margin-top: 6px;
+    }
+}
