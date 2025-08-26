@@ -143,48 +143,35 @@
   </section>
 
   <!-- Contato -->
-  <section id="contato" class="section contact">
+   <section id="contato" class="section contact">
     <div class="container grid-contact">
       <div class="contact-card">
         <h3>Solicite um Orçamento</h3>
-        <!-- FormSubmit (token) -->
-        <form id="contactForm" action="https://formsubmit.co/fadcc8fe0de715322b93352ce494571c" method="POST" novalidate>
+        <form id="contactForm" method="POST" novalidate>
           <input type="hidden" name="_captcha" value="false">
           <input type="hidden" name="_template" value="table">
           <input type="hidden" name="_subject" value="Novo contato - Entregas Ville">
+          <input type="hidden" name="_origin" value="entregasville.com.br">
+          <input type="hidden" name="_next" value="https://entregasville.com.br/?enviado=1">
           <input type="text" name="_honey" style="display:none">
 
-        <label>Nome
-            <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required>
-          </label>
-          <label>E-mail
-            <input type="email" id="email" name="email" placeholder="seu@email.com" required>
-          </label>
-
-          <label for="whatsapp">WhatsApp</label>
-          <input type="tel" id="whatsapp" name="whatsapp" placeholder="(00) 00000-0000" required>
-
-          <label>Mensagem
-            <textarea id="mensagem" name="mensagem" rows="5" placeholder="Conte-nos sobre sua necessidade..." required></textarea>
-          </label>
-
+          <label>Nome<input type="text" id="nome" name="nome" required></label>
+          <label>E-mail<input type="email" id="email" name="email" required></label>
+          <label>WhatsApp<input type="tel" id="whatsapp" name="whatsapp" required></label>
+          <label>Mensagem<textarea id="mensagem" name="mensagem" rows="5" required></textarea></label>
 
           <button class="btn btn-primary btn-block" type="submit" id="submitBtn">Enviar Mensagem</button>
-          <div id="formStatus" class="form-status" role="status" aria-live="polite"></div>
+          <div id="formStatus" class="form-status"></div>
         </form>
       </div>
-
       <aside class="contact-info">
         <h4>Nossos Contatos</h4>
-        <ul>
-          <li><span class="ci-badge">📞</span><div><b>Telefone</b><br><span>(47) 99742-5798</span></div></li>
-          <li><span class="ci-badge">✉️</span><div><b>E-mail</b><br><span>entregasville@gmail.com</span></div></li>
-          <li><span class="ci-badge">📍</span><div><b>Endereço</b><br><span>Joinville - SC</span></div></li>
-        </ul>
+        <p>📞 (47) 99742-5798</p>
+        <p>✉️ entregasville@gmail.com</p>
+        <p>📍 Joinville - SC</p>
       </aside>
     </div>
   </section>
-
   <!-- Footer -->
   <footer class="site-footer">
     <div class="container footer-grid">
