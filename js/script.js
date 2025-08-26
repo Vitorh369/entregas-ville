@@ -1,7 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  /* ===========================
-   *  Navbar (hamburger)
-   * =========================== */
+  // ===== Navbar
   const burger = document.querySelector('.hamburger');
   const nav = document.querySelector('.main-nav');
   burger?.addEventListener('click', () => {
@@ -9,9 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     burger.classList.toggle('open');
   });
 
-  /* ===========================
-   *  Scroll-to-top
-   * =========================== */
+  // ===== Scroll-to-top
   const stBtn = document.getElementById('scrollTopBtn');
   const toggleSt = () => {
     const y = window.scrollY || document.documentElement.scrollTop;
@@ -21,20 +17,16 @@ document.addEventListener('DOMContentLoaded', () => {
   toggleSt();
   stBtn?.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
-  /* ===========================
-   *  Máscara WhatsApp
-   * =========================== */
+  // ===== Máscara WhatsApp
   const whatsappInput = document.getElementById('whatsapp');
-  whatsappInput?.addEventListener('input', function (e) {
-    let value = e.target.value.replace(/\D/g, '');
-    value = value.replace(/^(\d{2})(\d)/g, '($1) $2');
-    value = value.replace(/(\d{5})(\d)/, '$1-$2');
-    e.target.value = value.substring(0, 15);
+  whatsappInput?.addEventListener('input', (e) => {
+    let v = e.target.value.replace(/\D/g, '');
+    v = v.replace(/^(\d{2})(\d)/g, '($1) $2');
+    v = v.replace(/(\d{5})(\d)/, '$1-$2');
+    e.target.value = v.substring(0, 15);
   });
 
-  /* ===========================
-   *  Form + WhatsApp
-   * =========================== */
+  // ===== Form + WhatsApp
   const form = document.getElementById('contactForm');
   const statusEl = document.getElementById('formStatus');
   const submitBtn = document.getElementById('submitBtn');
@@ -45,33 +37,35 @@ document.addEventListener('DOMContentLoaded', () => {
     statusEl.className = 'form-status ' + (ok ? 'ok' : 'err');
   }
 
-  // Define o action via Base64 (esconde o token no HTML)
   if (form) {
-    // "https://formsubmit.co/fadcc8fe0de715322b93352ce494571c"
+    // Define o action via Base64 (esconde o token no HTML)
     const b64 = 'aHR0cHM6Ly9mb3Jtc3VibWl0LmNvL2ZhZGNjOGZlMGRlNzE1MzIyYjkzMzUyY2U0OTQ1NzFj';
     form.action = atob(b64);
+
+    // Ajusta _origin para o domínio atual (entregasville.com.br OU github.io)
+    const originInput = form.querySelector('input[name="_origin"]');
+    if (originInput) originInput.value = location.hostname;
   }
 
-  let sending = false; // evita duplo envio
+  let sending = false;
 
   form?.addEventListener('submit', async (e) => {
     e.preventDefault();
     if (sending) return;
+
     if (!form.checkValidity()) {
       showStatus('Por favor, preencha todos os campos corretamente.', false);
       return;
     }
 
-    // Campos
     const nome = document.getElementById('nome')?.value?.trim() || '';
     const email = document.getElementById('email')?.value?.trim() || '';
     const whatsapp = document.getElementById('whatsapp')?.value?.trim() || '';
     const mensagem = document.getElementById('mensagem')?.value?.trim() || '';
 
-    // Número do SEU WhatsApp no formato internacional (ex.: 5547999999999)
+    // WhatsApp destino em formato internacional
     const numeroEmpresa = '5547997425798';
 
-    // Texto do WhatsApp
     const textoWpp =
       'Olá! Tenho interesse no orçamento.%0A%0A' +
       '*Nome:*%20' + encodeURIComponent(nome) + '%0A' +
@@ -81,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const urlWhatsApp = `https://wa.me/${numeroEmpresa}?text=${textoWpp}`;
 
-    // Evita bloqueio de pop-up: abre antes do await
+    // Abre janela antes do await para evitar bloqueio
     const wppWin = window.open('about:blank', '_blank');
 
     const data = new FormData(form);
@@ -96,8 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
         body: data
       });
 
-      const text = await res.text(); // útil para debug
-      // console.log('FormSubmit response:', res.status, text);
+      const bodyText = await res.text(); // ajuda no debug
 
       if (res.ok) {
         form.reset();
@@ -106,12 +99,11 @@ document.addEventListener('DOMContentLoaded', () => {
         else window.open(urlWhatsApp, '_blank');
       } else {
         if (wppWin) wppWin.close();
-        showStatus('Erro ao enviar: ' + (text || 'tente novamente mais tarde.'), false);
+        showStatus(`Erro ao enviar (HTTP ${res.status}). ${bodyText || ''}`, false);
       }
     } catch (err) {
       if (wppWin) wppWin.close();
       showStatus('Falha de rede. Verifique sua conexão e tente novamente.', false);
-      // console.error(err);
     } finally {
       submitBtn.disabled = false;
       submitBtn.textContent = 'Enviar Mensagem';

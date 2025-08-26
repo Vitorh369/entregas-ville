@@ -147,23 +147,38 @@
     <div class="container grid-contact">
       <div class="contact-card">
         <h3>Solicite um Orçamento</h3>
+
+        <!-- Sem action; será definido via JS -->
         <form id="contactForm" method="POST" novalidate>
+          <!-- FormSubmit controls -->
           <input type="hidden" name="_captcha" value="false">
           <input type="hidden" name="_template" value="table">
           <input type="hidden" name="_subject" value="Novo contato - Entregas Ville">
-          <input type="hidden" name="_origin" value="entregasville.com.br">
+          <input type="hidden" name="_origin" value="">
           <input type="hidden" name="_next" value="https://entregasville.com.br/?enviado=1">
           <input type="text" name="_honey" style="display:none">
 
-          <label>Nome<input type="text" id="nome" name="nome" required></label>
-          <label>E-mail<input type="email" id="email" name="email" required></label>
-          <label>WhatsApp<input type="tel" id="whatsapp" name="whatsapp" required></label>
-          <label>Mensagem<textarea id="mensagem" name="mensagem" rows="5" required></textarea></label>
+          <label>Nome
+            <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required>
+          </label>
+
+          <label>E-mail
+            <input type="email" id="email" name="email" placeholder="seu@email.com" required>
+          </label>
+
+          <label>WhatsApp
+            <input type="tel" id="whatsapp" name="whatsapp" placeholder="(00) 00000-0000" required>
+          </label>
+
+          <label>Mensagem
+            <textarea id="mensagem" name="mensagem" rows="5" placeholder="Conte-nos sobre sua necessidade..." required></textarea>
+          </label>
 
           <button class="btn btn-primary btn-block" type="submit" id="submitBtn">Enviar Mensagem</button>
-          <div id="formStatus" class="form-status"></div>
+          <div id="formStatus" class="form-status" role="status" aria-live="polite"></div>
         </form>
       </div>
+
       <aside class="contact-info">
         <h4>Nossos Contatos</h4>
         <p>📞 (47) 99742-5798</p>
