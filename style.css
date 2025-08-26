@@ -172,7 +172,7 @@ body {
     position: relative;
     padding: 90px 0 40px;
     overflow: hidden;
-    min-height: 64svh;
+    min-height: 40svh;
 }
 
 .hero-inner {
@@ -627,4 +627,43 @@ body {
     align-items: center;
     justify-content: center;
     line-height: 0;
+}
+
+
+
+/* 4) Banner mobile-first sem sair dos limites */
+.banner-inner {
+    display: flex;
+    flex-direction: column;
+    /* padrão: empilha no mobile */
+    gap: 20px;
+    /* espaço entre imagens */
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.banner-img {
+    width: 100%;
+    /* ocupa largura total no mobile */
+    max-width: 600px;
+    /* evita ficar gigante em desktop */
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* a partir de tablets (768px+) as imagens ficam lado a lado */
+@media (min-width: 768px) {
+    .banner-inner {
+        flex-direction: row;
+        /* coloca lado a lado */
+        justify-content: center;
+    }
+
+    .banner-img {
+        width: 48%;
+        /* cada uma ocupa metade da largura */
+        max-width: none;
+        /* remove limite fixo */
+    }
 }

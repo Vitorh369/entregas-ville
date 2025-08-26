@@ -16,7 +16,7 @@
   <header class="site-header">
     <div class="container nav">
       <a href="#" class="brand">
-        <img src="imagens/172a0c93-dfae-4edb-bc7e-3d6b7c00838b.jpg" alt="Entregas Ville" class="brand-logo" />
+        <img src="imagens/logo.jpg" alt="Entregas Ville" class="brand-logo" />
         <span class="brand-text"><b>Entregas</b><span class="accent">Ville</span></span>
       </a>
 
@@ -82,6 +82,15 @@
     </div>
   </section>
 
+  <!-- Banner -->
+<section class="banner">
+  <div class="container banner-inner">
+    <img src="imagens/banner1.png" alt="Promoção Entregas Ville" class="banner-img" loading="lazy">
+    <img src="imagens/banner2.png" alt="Promoção Entregas Ville" class="banner-img" loading="lazy">
+  </div>
+</section>
+
+
   <!-- Serviços - 6 cards -->
   <section id="servicos" class="section section-dark">
     <div class="container">
@@ -145,15 +154,20 @@
           <input type="hidden" name="_subject" value="Novo contato - Entregas Ville">
           <input type="text" name="_honey" style="display:none">
 
-          <label>Nome
-            <input type="text" name="nome" placeholder="Seu nome completo" required>
+        <label>Nome
+            <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required>
           </label>
           <label>E-mail
-            <input type="email" name="email" placeholder="seu@email.com" required>
+            <input type="email" id="email" name="email" placeholder="seu@email.com" required>
           </label>
+
+          <label for="whatsapp">WhatsApp</label>
+          <input type="tel" id="whatsapp" name="whatsapp" placeholder="(00) 00000-0000" required>
+
           <label>Mensagem
-            <textarea name="mensagem" rows="5" placeholder="Conte-nos sobre sua necessidade..." required></textarea>
+            <textarea id="mensagem" name="mensagem" rows="5" placeholder="Conte-nos sobre sua necessidade..." required></textarea>
           </label>
+
 
           <button class="btn btn-primary btn-block" type="submit" id="submitBtn">Enviar Mensagem</button>
           <div id="formStatus" class="form-status" role="status" aria-live="polite"></div>
@@ -176,7 +190,7 @@
     <div class="container footer-grid">
       <div class="f-brand">
         <a href="#" class="brand brand-invert">
-          <img src="imagens/172a0c93-dfae-4edb-bc7e-3d6b7c00838b.jpg" alt="Entregas Ville" class="brand-logo invert" />
+          <img src="imagens/logo.jpg" alt="Entregas Ville" class="brand-logo invert" />
           <span class="brand-text"><b>Entregas</b><span class="accent">Ville</span></span>
         </a>
         <p>Sua solução completa em logística e entregas rápidas.</p>
@@ -189,14 +203,6 @@
           <li><a href="#sobre">Sobre</a></li>
           <li><a href="#servicos">Serviços</a></li>
           <li><a href="#contato">Contato</a></li>
-        </ul>
-      </div>
-
-      <div>
-        <h5>Legal</h5>
-        <ul class="footer-links">
-          <li><a href="#">Política de Privacidade</a></li>
-          <li><a href="#">Termos de Serviço</a></li>
         </ul>
       </div>
 
