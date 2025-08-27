@@ -652,6 +652,7 @@ body {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
 }
 
+
 /* a partir de tablets (768px+) as imagens ficam lado a lado */
 @media (min-width: 768px) {
     .banner-inner {
@@ -666,4 +667,28 @@ body {
         max-width: none;
         /* remove limite fixo */
     }
+}
+
+
+.banner-l {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+
+    /* afasta das laterais */
+    padding: 0 20px;
+    /* 20px de espaço à esquerda e direita */
+    box-sizing: border-box;
+    /* garante que o padding não quebre a largura */
+}
+
+.banner-l .banner-img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    max-width: 1920px;
+    margin-top: 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
 }
